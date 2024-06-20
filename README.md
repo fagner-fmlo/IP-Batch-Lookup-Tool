@@ -18,7 +18,6 @@ Certifique-se de ter as seguintes bibliotecas Python instaladas:
 
 Você pode instalar estas bibliotecas utilizando o pip:
 
-sh
 
 pip install requests pandas openpyxl
 
@@ -26,14 +25,10 @@ Como usar
 
     Clone o repositório:
 
-    sh
-
 git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
 
 Execute o script:
-
-sh
 
     python consulta_ips_ipapi.py
 
