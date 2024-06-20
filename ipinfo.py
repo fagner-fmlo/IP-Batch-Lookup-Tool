@@ -3,7 +3,6 @@ from tkinter import filedialog, messagebox
 import requests
 import pandas as pd
 
-# Função para fazer a consulta de IPs utilizando a API do IP-API.com
 def consultar_ips(ips):
     resultados = []
     for ip in ips:
@@ -20,7 +19,6 @@ def consultar_ips(ips):
             resultados.append({'IP': ip, 'País': 'Erro', 'ASR': 'Erro'})
     return resultados
 
-# Função para carregar os IPs a partir de um arquivo
 def carregar_arquivo():
     filepath = filedialog.askopenfilename(title="Selecione o arquivo de texto com IPs", filetypes=[("Text files", "*.txt")])
     if filepath:
@@ -29,7 +27,6 @@ def carregar_arquivo():
         resultados = consultar_ips(ips)
         salvar_resultados(resultados)
 
-# Função para salvar os resultados em uma planilha Excel
 def salvar_resultados(resultados):
     df = pd.DataFrame(resultados)
     savepath = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Excel files", "*.xlsx")])
@@ -37,11 +34,9 @@ def salvar_resultados(resultados):
         df.to_excel(savepath, index=False)
         messagebox.showinfo("Sucesso", "Os resultados foram salvos com sucesso!")
 
-# Função para exibir o autor
 def exibir_autor():
     messagebox.showinfo("Autor", "Nome do Autor: cybersys_br")
 
-# Configuração da interface gráfica
 def criar_interface():
     root = tk.Tk()
     root.title("Query IPs Info")
